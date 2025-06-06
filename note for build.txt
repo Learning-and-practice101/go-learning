@@ -14,7 +14,7 @@ $env:GOOS="darwin"
 $env:GOARCH="amd64"
 go build -o macos/main .
 
-++++++++++++++++++++++++++++++++++++++
+-------------------------------------------------
 
 MacOS Build เพื่อใช้บน Windows
 ----
@@ -24,25 +24,18 @@ CMD
 ---
 set GOOS=windows
 set GOARCH=amd64
-go build -o windows/main .
-
-
-
-trick 
-Mac M4 ต้องเป็น GOARCH='arm64'
-
-go env
-
-+++++++++++++++++++++++++++++
-set windows
+go build -o windows/main.exe  .
 
 PowerShell
 ---
 $env:GOOS="windows"
 $env:GOARCH="amd64"
-go build -o macos/main .
+go build -o windows/hello.exe hello.go
 
-+++++++++++++++++++++++++++++=
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+comment --> trick  : Mac M4 ต้องเป็น GOARCH='arm64'
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 Windows and MacOS Build สำหรับ Linux
 การ Cross-Compile สำหรับ Linux
 ---
@@ -57,4 +50,3 @@ PowerShell
 $env:GOOS="linux"
 $env:GOARCH="amd64"
 go build -o linux/main .
----
